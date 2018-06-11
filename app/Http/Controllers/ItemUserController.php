@@ -78,9 +78,9 @@ class ItemUserController extends Controller
     {
         $itemCode = request()->itemCode;
 
-        if (\Auth::user()->is_wanting($itemCode)) {
+        if (\Auth::user()->is_having($itemCode)) {
             $itemId = Item::where('code', $itemCode)->first()->id;
-            \Auth::user()->dont_want($itemId);
+            \Auth::user()->dont_have($itemId);
         }
         return redirect()->back();
     }
