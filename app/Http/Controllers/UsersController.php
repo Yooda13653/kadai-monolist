@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Item;
 
+
 class UsersController extends Controller
 {
     /**
