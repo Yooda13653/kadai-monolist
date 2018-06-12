@@ -58,7 +58,7 @@ Route::get('ranking/have', 'RankingController@motsu')->name('ranking.have');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('items', 'ItemsController', ['only' => ['create', 'show']]);
-    Route::post('have', 'ItemUserController@motsu')->name('item_user.have');
+    Route::post('have', 'ItemUserController@have')->name('item_user.have');
     Route::delete('have', 'ItemUserController@dont_have')->name('item_user.dont_have');
     Route::resource('users', 'UsersController', ['only' => ['show']]);
 });
